@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apna‑NFD (Net Footprint Dashboard)</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 2rem; line-height: 1.6; background-color: #f9f9f9; }
-    .container { max-width: 800px; margin: auto; background: #fff; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    h1, h2, h3 { color: #333; }
-    pre { background: #272822; color: #f8f8f2; padding: 1rem; overflow-x: auto; }
-    code { background: #eee; padding: 0.2rem 0.4rem; border-radius: 4px; }
-    a { color: #0366d6; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-    th, td { border: 1px solid #ddd; padding: 0.5rem; }
-    th { background: #f1f1f1; }
-    .badge { display: inline-block; margin-right: 0.5rem; }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -31,7 +12,8 @@
     <p><em>A full‑stack platform to ingest industrial data, predict corporate carbon footprint, and deliver actionable sustainability recommendations.</em></p>
 
     <h2>🗂️ Repository Structure</h2>
-    <pre><code>├── app.py
+    <pre><code>
+├── app.py
 ├── asgi.py
 ├── requirements.txt
 ├── Dockerfile
