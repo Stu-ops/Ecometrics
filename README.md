@@ -11,9 +11,6 @@
     <a href="#data">Sample Data</a>
     <a href="#contributing">Contributing</a>
     <a href="#license">License</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-      &#9776;
-    </a>
   </div>
 
   <div class="container my-4">
@@ -25,7 +22,7 @@
       <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
     </p>
 
-    <!-- Table of Contents -->
+  Table of Contents
   <nav class="mb-4">
       <ul>
         <li><a href="#overview">Project Overview</a></li>
@@ -40,7 +37,7 @@
       </ul>
     </nav>
 
-    <!-- Sections -->
+  Sections
   <section id="overview">
       <h2>Project Overview</h2>
       <p>
@@ -166,20 +163,3 @@ AI_Part/
       <p>MIT License. See <a href="LICENSE">LICENSE</a> for details.</p>
     </section>
   </div>
-
-  <!-- Bootstrap JS bundle -->
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
-    crossorigin="anonymous"
-  ></script>
-
-  <!-- Nav toggle script -->
-  <script>
-    function toggleNav() {
-      var x = document.getElementById("myTopnav");
-      x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
-    }
-  </script>
-</body>
-</html>
