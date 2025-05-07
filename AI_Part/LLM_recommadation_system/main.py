@@ -18,7 +18,7 @@ def build_query(user_input, additional_text):
              f"{additional_text}")
     return query
 API_ENDPOINT = "https://api.groq.com/v1/generate" 
-API_KEY = "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" 
+API_KEY = [YOUR_API_KEY] 
 
 def call_llm_api(prompt):
     payload = {
