@@ -14,7 +14,7 @@
   </div>
 
   <div class="container my-4">
-    <h1 class="mb-3">apna‑nfd <small class="text-muted">Net Footprint Dashboard</small></h1>
+    <h1 class="mb-3">Ecometrics <small class="text-muted">Net Footprint Dashboard</small></h1>
     <!-- Badges -->
     <p>
       <img src="https://img.shields.io/github/repo-size/Stu-ops/apna-nfd" alt="Repo Size">
