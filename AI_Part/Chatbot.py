@@ -7,7 +7,7 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-groq_client = groq.Client(api_key="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")
+groq_client = groq.Client(api_key="[YOUR_API_KEY]")
 def fetch_predicted_emission():
     try:
         response = requests.get("http://127.0.0.1:8000/predict", timeout=5)  
