@@ -1,78 +1,185 @@
 <body>
-  <div class="container">
+
+  <!-- Top Navigation -->
+  <div class="topnav" id="myTopnav">
+    <a href="#overview" class="active">Overview</a>
+    <a href="#structure">Structure</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#setup">Getting Started</a>
+    <a href="#usage">Usage</a>
+    <a href="#aipart">AI_Part</a>
+    <a href="#data">Sample Data</a>
+    <a href="#contributing">Contributing</a>
+    <a href="#license">License</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+      &#9776;
+    </a>
+  </div>
+
+  <div class="container my-4">
+    <h1 class="mb-3">apna‑nfd <small class="text-muted">Net Footprint Dashboard</small></h1>
     <!-- Badges -->
     <p>
-      <a class="badge" href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-      <a class="badge" href="https://github.com/Stu-ops/apna-nfd"><img src="https://img.shields.io/github/repo-size/Stu-ops/apna-nfd" alt="Repo Size"></a>
-      <a class="badge" href="https://github.com/Stu-ops/apna-nfd"><img src="https://img.shields.io/github/languages/top/Stu-ops/apna-nfd" alt="Languages"></a>
+      <img src="https://img.shields.io/github/repo-size/Stu-ops/apna-nfd" alt="Repo Size">
+      <img src="https://img.shields.io/github/languages/top/Stu-ops/apna-nfd" alt="Languages"> 
+      <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
     </p>
 
-  <h1>Apna-NFD (Net Footprint Dashboard)</h1>
-    <p><em>A full‑stack platform to ingest industrial data, predict corporate carbon footprint, and deliver actionable sustainability recommendations.</em></p>
+    <!-- Table of Contents -->
+  <nav class="mb-4">
+      <ul>
+        <li><a href="#overview">Project Overview</a></li>
+        <li><a href="#structure">Repository Structure</a></li>
+        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#setup">Getting Started</a></li>
+        <li><a href="#usage">Usage & API</a></li>
+        <li><a href="#aipart">AI_Part Module</a></li>
+        <li><a href="#data">Sample Data</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#license">License</a></li>
+      </ul>
+    </nav>
 
-  <h2>🗂️ Repository Structure</h2>
-    <pre><code>
-├── app.py
-├── asgi.py
-├── requirements.txt
-├── Dockerfile
-├── data/
-│   ├── sample_input.csv
-│   └── sample_output.csv
-├── model/
-│   └── carbon_model.pth
-├── static/
-│   └── css/
-│       └── style.css
-└── templates/
-    └── index.html</code></pre>
+    <!-- Sections -->
+  <section id="overview">
+      <h2>Project Overview</h2>
+      <p>
+        <strong>apna‑nfd</strong> ingests industrial metrics, uses a PyTorch model to predict carbon footprints,
+        and delivers sustainability recommendations via an AI chatbot. It’s split into backend, frontend,
+        and an AI_Part module for recommendation logic.
+      </p>
+    </section>
 
-  <h2>🚀 Quickstart</h2>
-    <h3>1. Clone repo</h3>
-    <pre><code>git clone https://github.com/Stu-ops/apna-nfd.git
-cd apna-nfd</code></pre>
+  <section id="structure">
+      <h2>Repository Structure</h2>
+      <pre><code>
+├── AI_Part/                # Chatbot & recommendation engine  
+├── backend/                # FastAPI service, PyTorch model, templates  
+│   ├── app.py  
+│   ├── asgi.py  
+│   ├── model/carbon_model.pth  
+│   ├── data/sample_input.csv  
+│   ├── data/sample_output.csv  
+│   ├── static/css/style.css  
+│   └── templates/index.html  
+├── frontend/               # React/TypeScript SPA  
+│   ├── package.json  
+│   ├── public/index.html  
+│   └── src/  
+├── sample_data.csv         # Combined sample data  
+└── index.html              # ← this file  
+      </code></pre>
+    </section>
 
-  <h3>2. Install dependencies</h3>
-    <pre><code>pip install -r requirements.txt</code></pre>
+  <section id="tech">
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><strong>Backend</strong>: FastAPI (ASGI) , Uvicorn, Pydantic</li>
+        <li><strong>Model</strong>: PyTorch <code>.pth</code> serialization </li>
+        <li><strong>Chatbot</strong>: Groq AI integration</li>
+        <li><strong>Frontend</strong>: React, TypeScript, Vite </li>
+        <li><strong>Containerization</strong>: Docker & Docker Compose </li>
+        <li><strong>Docs</strong>: Swagger UI & ReDoc (OpenAPI) </li>
+      </ul>
+    </section>
 
-  <h3>3. Run locally</h3>
-    <pre><code>uvicorn asgi:asgi_app --reload --host 0.0.0.0 --port 8000</code></pre>
+  <section id="setup">
+      <h2>Getting Started</h2>
+      <h3>Backend</h3>
+      <pre><code>
+cd backend
+pip install -r requirements.txt
+uvicorn asgi:asgi_app --reload --host 0.0.0.0 --port 8000
+      </code></pre>
+      <h3>Frontend</h3>
+      <pre><code>
+cd frontend
+npm install
+npm run dev    # http://localhost:3000
+      </code></pre>
+      <h3>Docker &amp; Docker Compose</h3>
+      <pre><code>
+# docker-compose.yml
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+  frontend:
+    build: ./frontend
+    ports: ["3000:3000"]
 
-  <h2>🔧 Configuration</h2>
-    <p>Copy <code>.env.example</code> to <code>.env</code> and set your API keys:</p>
-    <pre><code>GROQ_API_KEY=your_groq_key_here
-DATA_SOURCE_URL=http://your-data-source</code></pre>
+# launch all
+docker-compose up --build
+      </code></pre>
+    </section>
 
-  <h2>📡 API Endpoints</h2>
-    <table>
-      <tr><th>Route</th><th>Method</th><th>Description</th></tr>
-      <tr><td>/predict</td><td>GET</td><td>Returns predicted carbon emission from sample data.</td></tr>
-      <tr><td>/chat</td><td>POST</td><td>Chatbot Q&A with sustainability recommendations. <code>{ "message": "..." }</code></td></tr>
-    </table>
+  <section id="usage">
+      <h2>Usage &amp; API</h2>
+      <h3>API Endpoints</h3>
+      <table class="table">
+        <thead><tr><th>Route</th><th>Method</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>/</td><td>GET</td><td>Dashboard HTML</td></tr>
+          <tr><td>/predict</td><td>POST</td><td>Industrial metrics → carbon prediction</td></tr>
+          <tr><td>/chat</td><td>POST</td><td>AI sustainability advice</td></tr>
+        </tbody>
+      </table>
+      <h3>Interactive Docs</h3>
+      <p>
+        Swagger UI: <a href="http://localhost:8000/docs">/docs</a><br>
+        ReDoc: <a href="http://localhost:8000/redoc">/redoc</a>
+      </p>
+    </section>
 
-  <h2>📊 Sample Input & Output</h2>
-    <pre><code>// sample_input.csv
-industry,energy_consumption,transport_emissions,...
-Manufacturing,12000,300,...
+  <section id="aipart">
+      <h2>AI_Part Module</h2>
+      <pre><code>
+AI_Part/
+├── chatbot.py       # Message handling
+├── recommendations/ # Prompt templates & logic
+└── utils.py
+      </code></pre>
+      <p>Run CLI tests: <code>python AI_Part/chatbot.py</code></p>
+    </section>
 
-// sample_output.csv
-prediction
-4500.25</code></pre>
+  <section id="data">
+      <h2>Sample Data</h2>
+      <ul>
+        <li><code>backend/data/sample_input.csv</code></li>
+        <li><code>backend/data/sample_output.csv</code></li>
+        <li><code>sample_data.csv</code></li>
+      </ul>
+    </section>
 
-  <h2>🛠️ Architecture</h2>
-    <ul>
-      <li>Flask + ASGI (Uvicorn via <code>WsgiToAsgi</code>)</li>
-      <li>Groq AI chatbot for recommendations</li>
-      <li>pickle <code>.pkl</code> model for emission prediction</li>
-      <li>Dockerized for container deployment</li>
-    </ul>
+  <section id="contributing">
+      <h2>Contributing</h2>
+      <ol>
+        <li>Fork &amp; create branch (<code>feature/xyz</code>)</li>
+        <li>Commit with Conventional Commits</li>
+        <li>Open a Pull Request against <code>main</code></li>
+      </ol>
+    </section>
 
-  <h2>🤝 Contributing</h2>
-    <p>1. Fork repo<br>2. Create feature branch<br>3. Commit & push<br>4. Open a PR</p>
-
-  <h2>📄 License</h2>
-    <p>Distributed under the MIT License. See <a href="LICENSE">LICENSE</a> for details.</p>
-
-  <p>---<br>Made with ❤️ by Stu‑ops</p>
+  <section id="license">
+      <h2>License</h2>
+      <p>MIT License. See <a href="LICENSE">LICENSE</a> for details.</p>
+    </section>
   </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" 
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Nav toggle script -->
+  <script>
+    function toggleNav() {
+      var x = document.getElementById("myTopnav");
+      x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
+    }
+  </script>
 </body>
+</html>
