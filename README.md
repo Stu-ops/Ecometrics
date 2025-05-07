@@ -1,4 +1,3 @@
-</head>
 <body>
   <div class="container">
     <!-- Badges -->
@@ -8,10 +7,10 @@
       <a class="badge" href="https://github.com/Stu-ops/apna-nfd"><img src="https://img.shields.io/github/languages/top/Stu-ops/apna-nfd" alt="Languages"></a>
     </p>
 
-    <h1>Apna-NFD (Net Footprint Dashboard)</h1>
+  <h1>Apna-NFD (Net Footprint Dashboard)</h1>
     <p><em>A full‑stack platform to ingest industrial data, predict corporate carbon footprint, and deliver actionable sustainability recommendations.</em></p>
 
-    <h2>🗂️ Repository Structure</h2>
+  <h2>🗂️ Repository Structure</h2>
     <pre><code>
 ├── app.py
 ├── asgi.py
@@ -28,30 +27,30 @@
 └── templates/
     └── index.html</code></pre>
 
-    <h2>🚀 Quickstart</h2>
+  <h2>🚀 Quickstart</h2>
     <h3>1. Clone repo</h3>
     <pre><code>git clone https://github.com/Stu-ops/apna-nfd.git
 cd apna-nfd</code></pre>
 
-    <h3>2. Install dependencies</h3>
+  <h3>2. Install dependencies</h3>
     <pre><code>pip install -r requirements.txt</code></pre>
 
-    <h3>3. Run locally</h3>
+  <h3>3. Run locally</h3>
     <pre><code>uvicorn asgi:asgi_app --reload --host 0.0.0.0 --port 8000</code></pre>
 
-    <h2>🔧 Configuration</h2>
+  <h2>🔧 Configuration</h2>
     <p>Copy <code>.env.example</code> to <code>.env</code> and set your API keys:</p>
     <pre><code>GROQ_API_KEY=your_groq_key_here
 DATA_SOURCE_URL=http://your-data-source</code></pre>
 
-    <h2>📡 API Endpoints</h2>
+  <h2>📡 API Endpoints</h2>
     <table>
       <tr><th>Route</th><th>Method</th><th>Description</th></tr>
       <tr><td>/predict</td><td>GET</td><td>Returns predicted carbon emission from sample data.</td></tr>
       <tr><td>/chat</td><td>POST</td><td>Chatbot Q&A with sustainability recommendations. <code>{ "message": "..." }</code></td></tr>
     </table>
 
-    <h2>📊 Sample Input & Output</h2>
+  <h2>📊 Sample Input & Output</h2>
     <pre><code>// sample_input.csv
 industry,energy_consumption,transport_emissions,...
 Manufacturing,12000,300,...
@@ -60,7 +59,7 @@ Manufacturing,12000,300,...
 prediction
 4500.25</code></pre>
 
-    <h2>🛠️ Architecture</h2>
+  <h2>🛠️ Architecture</h2>
     <ul>
       <li>Flask + ASGI (Uvicorn via <code>WsgiToAsgi</code>)</li>
       <li>Groq AI chatbot for recommendations</li>
@@ -68,13 +67,12 @@ prediction
       <li>Dockerized for container deployment</li>
     </ul>
 
-    <h2>🤝 Contributing</h2>
+  <h2>🤝 Contributing</h2>
     <p>1. Fork repo<br>2. Create feature branch<br>3. Commit & push<br>4. Open a PR</p>
 
-    <h2>📄 License</h2>
+  <h2>📄 License</h2>
     <p>Distributed under the MIT License. See <a href="LICENSE">LICENSE</a> for details.</p>
 
-    <p>---<br>Made with ❤️ by Stu‑ops</p>
+  <p>---<br>Made with ❤️ by Stu‑ops</p>
   </div>
 </body>
-</html>
